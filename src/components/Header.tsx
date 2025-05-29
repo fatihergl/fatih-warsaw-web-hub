@@ -23,6 +23,11 @@ const Header = () => {
     }
   };
 
+  const handleFriendsClick = () => {
+    window.location.href = '/friends';
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       scrolled ? 'bg-white/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
@@ -44,6 +49,12 @@ const Header = () => {
                 {item}
               </button>
             ))}
+            <button
+              onClick={handleFriendsClick}
+              className="text-gray-600 hover:text-blue-600 transition-colors duration-200 font-medium"
+            >
+              For Friends
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -67,6 +78,12 @@ const Header = () => {
                 {item}
               </button>
             ))}
+            <button
+              onClick={handleFriendsClick}
+              className="block w-full text-left py-2 text-gray-600 hover:text-blue-600 transition-colors duration-200"
+            >
+              For Friends
+            </button>
           </div>
         )}
       </nav>
